@@ -1,0 +1,195 @@
+body {
+    max-width: 100%;
+    max-height: 100%;
+    background-color: #efe7e7;
+}
+/**************************Estilos header**************************/
+header {
+    font-size: 15px;
+    object-fit: contain;
+    width: 100%;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    background-color: #200f50;
+}
+
+.logo {
+    width: 110%;
+    height: 50px;
+    object-position: center;
+    transform: translate(10%);
+}
+.home{
+    display: flex;
+    align-items: center;
+    position: absolute;
+    top: 13px;
+    right: 40px;
+    width: 45px;
+}
+/**************************Estilos footer**************************/
+footer {
+    color: white;
+    padding: 10px 20px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 100px;
+    background-color: #f317bc;
+    text-align: center;
+}
+
+/************************Estilos divs y btns************************/
+.left-div {
+    width: 30%;
+    float: left;
+    padding: 20px 10px;
+    text-align: justify;
+    overflow-y: auto;
+    height: 500px;
+}
+.right-div {
+    width: 70%;
+    float: left;
+    padding: 20px 20px;
+    text-align: justify;
+    margin-top: auto;
+    margin-bottom: auto;
+    overflow: hidden;
+    position: relative;
+}
+.img-bienvenida {
+    background-size: cover;
+}
+.limpiar-fix::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+.grupo-btns {
+    display: flex;
+    gap: 50px;
+    margin-bottom: 20px;
+    justify-content: center;
+    align-items: center;
+}
+.btn .btn-primary :hover{
+    background-color: #AEC6CF!important;
+    font-weight: 700!important;
+}
+
+/***********************Estilos para bienvenida************************/
+.left-img {
+    width: 30%;
+    float: left;
+    padding: 20px;
+    align-items: center;
+    justify-content: center;
+}
+.right-img {
+    width: 70%;
+    float: left;
+    padding: 20px 20px;
+    text-align: center;
+    font-style: italic;
+}
+.animales {
+    width: 40%;
+}
+.btn-custom {
+    background-color: #1bd752; /*#9900ff*/
+    border: none;
+    color: white;
+    padding: 25px 42px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    transition-duration: 0.4s;
+    cursor: pointer;
+    border-radius: 12px;
+    margin-left: 115px;
+    margin-top: 80px;
+}
+.btn-custom:hover {
+    background-color: white;
+    color: black;
+    border: 2px solid #f88400;
+}
+.limpiar-btn::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+.tricolor-text span:nth-child(3n+1) {
+    color: #ff5a5a;
+}
+.tricolor-text span:nth-child(3n+2) {
+    color: #1bd752;
+}
+.tricolor-text span:nth-child(3n) {
+    color: #2c5293;
+}
+
+/*************************Estilos Modal*************************/
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+/* contenido del modal */
+.modal-content {
+    background-color: #fefefe;
+    margin: 10% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 500px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+/* El botón de cerrar (x) */
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+.btn-img {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    border: none;
+    background: transparent;
+    color: white;
+    transform: translate(100%);   
+}
+.btn-img img {
+    width: 45px; 
+    height: 45px; 
+    border-radius: 50%; 
+    transition: transform 0.3s ease, box-shadow 0.3s ease; 
+}
+.modal-form-button {
+    background-color: #f317bc; 
+    color: #fff; 
+    border: none; 
+    padding: 10px 20px;
+    font-size: 16px; 
+    border-radius: 5px; 
+    cursor: pointer; 
+    transition: background-color 0.3s ease; /* Transición suave para el color de fondo */
+}

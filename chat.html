@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Preguntas Frecuentes</title>
+    <link rel="icon" href="icon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="buzon.css">
+    <link rel="stylesheet" href="chat.css">
+</head>
+<body>
+    <header>
+        <a href="index.html">
+            <img src="logo.png" alt="Explora Kids" class="logo">
+            <img src="home.png" alt="Home" class="home">
+        </a>
+    </header>
+
+    <div class="faq-container">
+        <div class="faq-mascot">
+            🐱 Hola, soy tu asistente. ¿Cuál es tu duda?
+        </div>
+        <div class="faq-item">
+            <div class="faq-question">¿Qué aprende mi hijo aquí?</div>
+            <div class="faq-answer">Aprende acerca de las características de los animales en el mundo.</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question">¿Qué tan intuitivo es?</div>
+            <div class="faq-answer">Es muy intuitivo y de fácil entendimiento.</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question">¿Cómo puedo realizar una queja?</div>
+            <div class="faq-answer">Puedes contactar con el soporte enviando un buzón de quejas, o bien, llamando al 656 123 5559.</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question">¿Desde qué edad puede interactuar mi hijo?</div>
+            <div class="faq-answer">Desde los 6 años de edad en adelante o según la decisión de cada padre.</div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question">¿Sólo niños pueden interactuar?</div>
+            <div class="faq-answer">No, cualquiera con gusto por los animales puede hacerlo. ¡Anímate!</div>
+        </div>
+        <div class="no-help" onclick="showNoHelpResponse()">No encuentro mi pregunta aquí</div>
+        <div class="no-help-response">Lo siento, no puedo ayudarte con esa pregunta.</div>
+        
+    </div>
+    <script>
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const faqItem = question.parentElement;
+                faqItem.classList.toggle('active');
+            });
+        });
+
+        function showNoHelpResponse() {
+            document.querySelector('.no-help-response').style.display = 'block';
+        }
+    </script>
+    <footer>
+        <div id="dynamic-footer"></div>
+    </footer>
+    <script src="footer.js"></script>
+</body>
+</html>

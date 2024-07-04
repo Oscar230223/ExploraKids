@@ -1,0 +1,13 @@
+@keyframes moveLeftToRight {
+    from { left: 0; }
+    to { left: 100%; }
+}
+.animate-ease {
+    position: relative;
+    animation: moveLeftToRight 5s ease forwards;
+}
+.animate-ease-in {
+    position: relative;
+    animation: moveLeftToRight 5s ease-in forwards;
+}
+

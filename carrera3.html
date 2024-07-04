@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Explora Kids</title>
+    <link rel="icon" href="icon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="carreras.css">
+</head>
+<body>
+    <header>
+        <a href="index.html">
+            <img src="logo.png" alt="Explora Kids" class="logo">
+            <img src="home.png" alt="Home" class="home">
+        </a>
+    </header>
+
+    <div class="limpiar-fix">
+        <div class="left-div">
+            <div class="grupo-btns">
+                <button type="button" onclick="location.href='chat.html'" class="btn btn-primary" style="background-color: #00bbff!important; color: black; font-weight: 700;">FAQ'S</button>
+                <button type="button" onclick="location.href='carrera1.html'" class="btn btn-secondary" style="background-color: #ff9dac!important; color: black; font-weight: 700;">Carrera 1</button>
+                <button type="button" onclick="location.href='carrera2.html'" class="btn btn-success" style="background-color: #98FF98!important; color: black; font-weight: 700;">Carrera 2</button>
+            </div>
+            <center><h3>¿Quién será el más rápido?</h3></center>
+            <p>
+                Aguila real, puede medir entre 76 cm y 90 cm de longitud,
+                La velocidad máxima que puede alcanzar es de aproximadamente
+                320 km/h, con una envergadura de hasta 2 metros. Su plumaje
+                es marrón oscuro, pero brilla al recibir luz solar. Las hembras
+                son más grandes y pesadas que los machos. Tanto su pico como
+                sus garras son de color amarillo intenso.
+                Los gorriones son aves pequeñas y compactas, la longitud promedio
+                varía entre 12 y 16 centímetros desde la punta del pico hasta la cola.
+                Velocidad promedio de aproximadamente 38.6 kilómetros por hora. 
+            </p>
+        </div>
+        
+        <div class="right-div">
+            <center><h2><b>Aguila Real 🆚 Gorrión</b></h2></center>
+            <p style="font-size: 20px; text-align: center;">
+                <b>¿Quién ganará?🤔</b> Descubrelo tú mismo, para comenzar debes dar clic en 💯Iniciar carrera💯. 
+                Puedes conocer sobre más animales usando los botones que están a tu izquierda.😃
+            </p>
+            <div id="div2" class="div">
+                <img src="aguila.png" alt="Leopardo" style="width:12%;">
+            </div>
+            <div id="div3" class="div">
+                <img src="gorrion.png" alt="Jabalí" style="width:12%;">
+            </div>
+            <center>
+                <button onclick="startAnimation()" class="btn btn-primary mt-3">Iniciar carrera</button>
+                <button onclick="resetAnimation()" class="btn btn-secondary mt-3">Reiniciar carrera</button>
+            </center>
+        </div>
+    </div>
+
+    <footer>
+        <div id="dynamic-footer"></div>
+    </footer>
+    <script src="footer.js"></script>
+
+    <script>
+        function startAnimation() {
+            const rightDiv = document.querySelector('.right-div');
+            const rightDivWidth = rightDiv.clientWidth;
+
+            // Actualizar la animación
+            const keyframes = `
+                @keyframes moveLeftToRight {
+                    from { left: 0; }
+                    to { left: ${rightDivWidth - 150}px; } 
+                }
+            `;
+
+            // Crear los Keyframes de manera dinámica
+            const styleSheet = document.createElement("style");
+            styleSheet.type = "text/css";
+            styleSheet.innerText = keyframes;
+            document.head.appendChild(styleSheet);
+
+            document.getElementById("div2").classList.add('animate-ease');
+            document.getElementById("div3").classList.add('animate-ease-in');
+        }
+
+        function resetAnimation() {
+            const div2 = document.getElementById("div2");
+            const div3 = document.getElementById("div3");
+
+            div2.style.left = "0";
+            div3.style.left = "0";
+
+            div2.classList.remove('animate-ease');
+            div3.classList.remove('animate-ease-in');
+
+            //Forzar para reiniciarlo
+            void div2.offsetWidth;
+            void div3.offsetWidth;
+        }
+    </script>
+</body>
+</html>
